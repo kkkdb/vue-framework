@@ -1,7 +1,3 @@
-import jQuery from '../lib/jQuery/jQuery-2.2.0.min.js'
-import Bootstrap from '../lib/bootstrap/js/bootstrap.min.js'
-import AdminLTE from '../lib/adminLTE/js/app.min.js'
-
 var Vue = require('vue'),
     VueRouter = require('vue-router'),
     VueResource = require('vue-resource')
