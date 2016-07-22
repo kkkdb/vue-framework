@@ -1,10 +1,10 @@
 <template>
   <div class="wrapper">
-    <!-- 页面顶部公共模块 -->
+    <!-- 页面顶部公共模块
     <top-bar></top-bar>
-    <!-- 侧边栏导航公共模块 -->
+    侧边栏导航公共模块
     <side-bar></side-bar>
-    <!-- 路由导航的不同主内容区 -->
+    路由导航的不同主内容区 -->
     <router-view></router-view>
   </div>
 </template>

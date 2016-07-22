@@ -6,19 +6,22 @@ Vue.use(VueRouter)
 Vue.use(VueResource)
 
 var App = require('./App'),
-    Home = require('./components/Home')
+    Home = require('./components/Home'),
+    Login = require('./components/Login')
 
 var router = new VueRouter()
 
 router.map({
-  // 首页
   '/home': {
     component: Home
+  },
+  '/login': {
+    component: Login
   }
 })
 
 router.redirect({
-  '*': '/home'
+  '*': '/login'
 })
 
 router.start(App, '#app')
