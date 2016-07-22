@@ -84,6 +84,14 @@
             $(".content-wrapper").css({
                 'min-height': window_h - header_h + 'px'
             });
+
+            this.$http.get('http://127.0.0.1:3000/vueGet').then((res) => {
+                // success callback
+                console.log(res);
+            }, (res) => {
+                // error callback
+                console.log(res);
+            });
         }
     };
 </script>

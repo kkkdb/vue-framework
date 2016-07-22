@@ -5,52 +5,18 @@
         <li class="header">导航栏</li>
 
         <li class="treeview">
-          <a href="#"><i class="fa fa-truck"></i> <span>发运组</span> <i class="fa fa-angle-left pull-right"></i></a>
+          <a href="#"><i class="fa fa-truck"></i> <span>商品</span> <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> 预到货通知列表</a></li>
-            <li><a href="#"> <i class="fa fa-circle-o"></i>水果收货</a></li>
+            <li><a v-link="{ path: '/index/productList' }"><i class="fa fa-circle-o"></i> 商品列表</a></li>
+            <li><a v-link="{ path: '/index/productDetail' }"> <i class="fa fa-circle-o"></i>商品详情</a></li>
           </ul>
         </li>
+
         <li class="treeview">
-          <a href="#"><i class="fa  fa-calculator"></i> <span>盘点组</span> <i class="fa fa-angle-left pull-right"></i></a>
+          <a href="#"><i class="fa fa-truck"></i> <span>库存</span> <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> 预到货通知列表</a></li>
-            <li><a href="#"> <i class="fa fa-circle-o"></i>水果收货</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#"><i class="fa  fa-retweet"></i> <span>退货组</span> <i class="fa fa-angle-left pull-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> 预到货通知列表</a></li>
-            <li><a href="#"> <i class="fa fa-circle-o"></i>水果收货</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#"><i class="fa  fa-recycle"></i> <span>耗材管理组</span> <i class="fa fa-angle-left pull-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> 预到货通知列表</a></li>
-            <li><a href="#"> <i class="fa fa-circle-o"></i>水果收货</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-area-chart"></i> <span>总部运营</span> <i class="fa fa-angle-left pull-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> 预到货通知列表</a></li>
-            <li><a href="#"> <i class="fa fa-circle-o"></i>水果收货</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-phone"></i> <span>仓配客服</span> <i class="fa fa-angle-left pull-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> 预到货通知列表</a></li>
-            <li><a href="#"> <i class="fa fa-circle-o"></i>水果收货</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-desktop"></i> <span>业务监控</span> <i class="fa fa-angle-left pull-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> 预到货通知列表</a></li>
-            <li><a href="#"> <i class="fa fa-circle-o"></i>水果收货</a></li>
+            <li><a v-link="{ path: '/index/inventoryList' }"><i class="fa fa-circle-o"></i> 库存列表</a></li>
+            <li><a v-link="{ path: '/index/inventoryDetail' }"> <i class="fa fa-circle-o"></i>库存详情</a></li>
           </ul>
         </li>
       </ul>
