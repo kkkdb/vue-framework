@@ -8,8 +8,8 @@
 </template>
 
 <script>
-var topBar = require('./components/topBar.vue')
-var sideBar = require('./components/sideBar.vue')
+var topBar = require('../component/topBar')
+var sideBar = require('../component/sideBar')
 
 module.exports = {
   components: {

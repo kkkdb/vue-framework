@@ -34,32 +34,52 @@
     </div>
 </div>
 
+
+
 </template>
 
 <script>
-    module.exports = {
-        ready: function() {
+var API = require('../common/API'),
+    Cookie = require('../common/Cookie')
 
-        },
-        data: function() {
-            return {
-                'userInfo': {
-                    'userName': '',
-                    'password': ''
-                },
-                'errorMsg': "登录失败"
-            }
-        },
-        methods: {
-            login: function() {
-                this.$http.post('http://127.0.0.1:3000/vueLogin', this.userInfo).then((res) => {
-                    // success callback
-                    console.log(res);
-                }, (res) => {
-                    // error callback
-                    console.log(res);
-                });
-            }
+module.exports = {
+    ready: function() {
+
+    },
+    data: function() {
+        return {
+            'userInfo': {
+                'userName': '',
+                'password': ''
+            },
+            'errorMsg': ''
         }
-    }; 
+    },
+    methods: {
+        login: function() {
+            var that = this;
+            var loading = layer.load(1);
+            this.$http.post(API.login, this.userInfo).then((res) => {
+                // success callback
+                layer.close(loading);
+
+                if(res.data.success){
+                    that.errorMsg = '';
+                  
+                    Cookie.setCookie(res.data.data, function() {
+                        that.$route.router.go({name: 'home'});
+                    });
+                }else{
+                    that.errorMsg = res.data.message;
+                }
+            }, (res) => {
+                // error callback
+                layer.close(loading);
+                layer.msg("当前网络太差，请稍后重试", {
+                    time: 1200
+                });
+            });
+        }
+    }
+}; 
 </script>

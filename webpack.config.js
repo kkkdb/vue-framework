@@ -1,3 +1,5 @@
+var path = require('path'),
+	webpack = require('webpack')
 // npm run dev
 module.exports = {
 	entry: './src/main.js',

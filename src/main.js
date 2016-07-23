@@ -10,40 +10,46 @@ Vue.use(VueResource)
 
 
 var App = require('./App'),
-    Index = require('./Index.vue'),
-    Login = require('./Login')
-
-var home = require('./components/home'),
-    productList = require('./components/product/pdtList.vue'),
-    productDetail = require('./components/product/pdtDetail.vue'),
-    inventoryList = require('./components/inventory/intList.vue'),
-    inventoryDetail = require('./components/inventory/intDetail.vue')
+    index = require('./view/index'),
+    login = require('./view/login'),
+    home = require('./view/home'),
+    productList = require('./view/product/pdtList'),
+    productDetail = require('./view/product/pdtDetail'),
+    inventoryList = require('./view/inventory/intList'),
+    inventoryDetail = require('./view/inventory/intDetail')
 
 var router = new VueRouter()
 
 router.map({
   '/index': {
-    component: Index,
+    name: 'index',
+    component: index,
     subRoutes: {
       '/home': {
+        name: 'home',
         component: home
       },
       '/productList': {
+        name: 'productList',
         component: productList
       },
       '/productDetail': {
+        name: 'productDetail',
         component: productDetail
       },
       '/inventoryList': {
+        name: 'inventoryList',
         component: inventoryList
       },
       '/inventoryDetail': {
+        name: 'inventoryDetail',
         component: inventoryDetail
       }
     }
   },
   '/login': {
-    component: Login
+    name: 'login',
+    component: login
   }
 })
 

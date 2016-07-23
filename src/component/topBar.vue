@@ -1,7 +1,7 @@
 <template>
   <header class="main-header">
     <!-- Logo -->
-    <a v-link="{ path: '/home' }" class="logo">
+    <a v-link="{ path: '/index/home' }" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>M</b>MS</span>
       <!-- logo for regular state and mobile devices -->
@@ -20,14 +20,14 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="http://placehold.it/100x100" class="user-image" alt="User Image">
-              <span class="hidden-xs">陈果</span>
+              <span class="hidden-xs" v-text="userName"></span>
               <i class="fa  fa-angle-down"></i>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
                 <img src="http://placehold.it/100x100" class="img-circle" alt="User Image">
-                <p>陈果</p>
+                <p v-text="userName"></p>
               </li>
              
               <!-- Menu Footer-->
@@ -36,7 +36,7 @@
                   <a href="#" title="修改密码" class="btn btn-default btn-sm btn-flat"><i class="fa fa-gear"></i>  <span>修改密码</span></a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" title="退出" class="btn btn-default btn-sm btn-flat"><i class="fa fa-power-off"></i> <span>退出</span></a>
+                  <a href="#" title="退出" class="btn btn-default btn-sm btn-flat" v-on:click="signOut"><i class="fa fa-power-off"></i> <span>退出</span></a>
                 </div>
               </li>
             </ul>
@@ -48,17 +48,32 @@
 </template>
 
 <script>
-  module.exports = {
-    data: function(){
-      return {
+var Cookie = require('../common/Cookie.js')
 
-      }
+module.exports = {
+    ready: function() {
+        if (Cookie.getCookie("userName")) {
+            this.userName = Cookie.getCookie("userName");
+        } else {
+            this.$route.router.go({
+                name: 'login'
+            });
+        }
+    },
+    data: function() {
+        return {
+            'userName': ''
+        }
     },
     methods: {
-
-    },
-    events: {
-
+        'signOut': function() {
+            var that = this;
+            Cookie.deleteCookie(function(){
+                that.$route.router.go({
+                    name: 'login'
+                });
+            });
+        }
     }
-  }
+}
 </script>
