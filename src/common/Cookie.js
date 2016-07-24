@@ -9,7 +9,7 @@ function setCookie(cookies, callback) {
 	var expireTime = time + 1000*3600*24; // 单位为毫秒，故这里的cookie生命周期设置为一天
 	now.setTime(expireTime);
 	
-	for (var key in cookies) {
+	for (let key in cookies) {
 		document.cookie = key + '=' + cookies[key] + ';expires=' + now.toGMTString() + ';path=/';
 	}
 
@@ -26,7 +26,7 @@ function getCookie(cookieName) {
 		cookieArr = document.cookie.split(';'),
 		currentCookie = '';
 
-	for (var i = 0; i < cookieArr.length; i++) {
+	for (let i = 0; i < cookieArr.length; i++) {
 		currentCookie = cookieArr[i];
 		if (currentCookie) {
 			cookies[currentCookie.split('=')[0].trim()] = currentCookie.split('=')[1].trim();
@@ -49,7 +49,7 @@ function getCookie(cookieName) {
  */
 function deleteCookie(callback) {
 	var cookies = document.cookie.split(";");
-	for (var i = 0; i < cookies.length; i++) {
+	for (let i = 0; i < cookies.length; i++) {
 		var cookie = cookies[i];
 		var eqPos = cookie.indexOf("=");
 		var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
