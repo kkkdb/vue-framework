@@ -68,7 +68,7 @@ export default {
     methods: {
         'signOut': function() {
             var that = this;
-            deleteCookie(function(){
+            deleteCookie(function() {
                 that.$route.router.go({
                     name: 'login'
                 });

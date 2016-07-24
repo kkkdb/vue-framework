@@ -26,7 +26,6 @@ export default {
             'min-height':$(document).height()-$("header").height()+'px'
         });
 
-
         if(getCookie("userName")){
             this.userName = getCookie("userName");
         }else{
@@ -34,7 +33,7 @@ export default {
         }
 
     },
-    data: () => {
+    data: function() {
         return {
             'userName': ''
         }

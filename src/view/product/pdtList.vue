@@ -23,11 +23,10 @@
 <script>
 export default {
     ready: function() {
-        var window_h = $(document).height();
-        var header_h = $("header").height();
         $(".content-wrapper").css({
-            'min-height': window_h - header_h + 'px'
+            'min-height': $(document).height() - $("header").height() + 'px'
         });
+        
     }
 }
 </script>

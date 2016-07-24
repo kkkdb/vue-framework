@@ -33,7 +33,14 @@ function getCookie(cookieName) {
 		}
 	}
 
-	return cookies[cookieName.trim()];
+	if(typeof cookies[cookieName.trim()] != undefined){
+		return cookies[cookieName.trim()];
+	}
+	else{
+		return false;
+	}
+
+	
 }
 
 /**
