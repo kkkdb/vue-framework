@@ -21,13 +21,14 @@
 </template>
 
 <script>
-    module.exports = {
-        ready: function() {
-            var window_h = $(document).height();
-            var header_h = $("header").height();
-            $(".content-wrapper").css({
-                'min-height': window_h - header_h + 'px'
-            });
-        }
-    };
+
+export default {
+    ready: function() {
+        var window_h = $(document).height();
+        var header_h = $("header").height();
+        $(".content-wrapper").css({
+            'min-height': window_h - header_h + 'px'
+        });
+    }
+}
 </script>

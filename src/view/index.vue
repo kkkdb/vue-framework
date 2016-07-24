@@ -8,15 +8,15 @@
 </template>
 
 <script>
-var topBar = require('../component/topBar')
-var sideBar = require('../component/sideBar')
+import TopBar from '../component/TopBar'
+import SideBar from '../component/SideBar'
 
-module.exports = {
+export default {
   components: {
-    'topBar': topBar,
-    'sideBar': sideBar
+    'topBar': TopBar,
+    'sideBar': SideBar
   }
-};
+}
 </script>
 
 <style>

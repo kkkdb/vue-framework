@@ -26,9 +26,9 @@
 </template>
 
 <script>
-var API = require('../common/API');
+import API from '../common/API'
 
-module.exports = {
+export default {
     ready: function() {
         $("aside").height($(document).height()-$("header").height());
 
@@ -40,5 +40,5 @@ module.exports = {
             console.log(res);
         });
     }
-}; 
+}
 </script>

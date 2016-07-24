@@ -48,12 +48,12 @@
 </template>
 
 <script>
-var Cookie = require('../common/Cookie.js')
+import {getCookie, deleteCookie} from'../common/Cookie.js'
 
-module.exports = {
+export default {
     ready: function() {
-        if (Cookie.getCookie("userName")) {
-            this.userName = Cookie.getCookie("userName");
+        if (getCookie("userName")) {
+            this.userName = getCookie("userName");
         } else {
             this.$route.router.go({
                 name: 'login'
@@ -68,7 +68,7 @@ module.exports = {
     methods: {
         'signOut': function() {
             var that = this;
-            Cookie.deleteCookie(function(){
+            deleteCookie(function(){
                 that.$route.router.go({
                     name: 'login'
                 });

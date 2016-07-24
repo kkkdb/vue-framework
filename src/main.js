@@ -1,6 +1,6 @@
-var Vue = require('vue'),
-    VueRouter = require('vue-router'),
-    VueResource = require('vue-resource')
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import VueResource from'vue-resource'
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
@@ -9,14 +9,14 @@ Vue.use(VueResource)
 // Vue.http.headers.common['Access-Control-Allow-Origin'] = '*';
 
 
-var App = require('./App'),
-    index = require('./view/index'),
-    login = require('./view/login'),
-    home = require('./view/home'),
-    productList = require('./view/product/pdtList'),
-    productDetail = require('./view/product/pdtDetail'),
-    inventoryList = require('./view/inventory/intList'),
-    inventoryDetail = require('./view/inventory/intDetail')
+import App from './App'
+import index from './view/index'
+import login from './view/login'
+import home from './view/home'
+import productList from './view/product/pdtList'
+import productDetail from './view/product/pdtDetail'
+import inventoryList from './view/inventory/intList'
+import inventoryDetail from './view/inventory/intDetail'
 
 var router = new VueRouter()
 

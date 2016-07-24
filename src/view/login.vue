@@ -39,10 +39,10 @@
 </template>
 
 <script>
-var API = require('../common/API'),
-    Cookie = require('../common/Cookie')
+import API from '../common/API'
+import {setCookie} from '../common/Cookie'
 
-module.exports = {
+export default {
     ready: function() {
 
     },
@@ -66,7 +66,7 @@ module.exports = {
                 if(res.data.success){
                     that.errorMsg = '';
                   
-                    Cookie.setCookie(res.data.data, function() {
+                    setCookie(res.data.data, function() {
                         that.$route.router.go({name: 'home'});
                     });
                 }else{
@@ -81,5 +81,5 @@ module.exports = {
             });
         }
     }
-}; 
+}
 </script>

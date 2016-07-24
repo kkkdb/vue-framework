@@ -17,18 +17,18 @@
 </template>
 
 <script>
-var API = require('../common/API'),
-    Cookie = require('../common/Cookie.js')
+import API from '../common/API'
+import {getCookie} from '../common/Cookie.js'
 
-module.exports = {
+export default {
     ready: function() {
         $(".content-wrapper").css({
             'min-height':$(document).height()-$("header").height()+'px'
         });
 
 
-        if(Cookie.getCookie("userName")){
-            this.userName = Cookie.getCookie("userName");
+        if(getCookie("userName")){
+            this.userName = getCookie("userName");
         }else{
             this.$route.router.go({name: 'login'});
         }
@@ -39,5 +39,5 @@ module.exports = {
             'userName': ''
         }
     }
-};
+}
 </script>
