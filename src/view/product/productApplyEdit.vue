@@ -1,14 +1,14 @@
-<!-- 库存列表 -->
+<!-- Menu中不显示 -->
 <template>
   <div class="content-wrapper">
     <!-- Content Header -->
     <section class="content-header">
        <h1>
-        库存列表
+        上新编辑
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 库存</a></li>
-        <li class="active">库存列表</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> 商品管理</a></li>
+        <li class="active">上新编辑</li>
       </ol>
     </section>
 
@@ -21,11 +21,23 @@
 </template>
 
 <script>
+import API from '../../common/API'
+import {getCookie} from '../../common/Cookie'
+
 export default {
     ready: function() {
         $(".content-wrapper").css({
             'min-height': $(document).height() - $("header").height() + 'px'
         });
+
+    },
+    data: function() {
+        return {
+            
+        }
+    },
+    methods: {
+        
     }
 }
 </script>

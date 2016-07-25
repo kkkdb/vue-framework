@@ -1,14 +1,14 @@
-<!-- 商品列表 -->
+<!-- Menu中不显示 -->
 <template>
   <div class="content-wrapper">
     <!-- Content Header -->
     <section class="content-header">
        <h1>
-        商品列表
+        仓库编辑
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 商品</a></li>
-        <li class="active">商品列表</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> 仓库管理</a></li>
+        <li class="active">仓库编辑</li>
       </ol>
     </section>
 
@@ -30,22 +30,14 @@ export default {
             'min-height': $(document).height() - $("header").height() + 'px'
         });
 
-        this.getProductList();
     },
     data: function() {
         return {
-            'productList': []
+            
         }
     },
     methods: {
-        'getProductList': function() {
-            this.$http.get(API.getProductList).then((res) => {
-                // success callback
-
-            }, (res) => {
-                // error callback
-            });
-        }
+        
     }
 }
 </script>

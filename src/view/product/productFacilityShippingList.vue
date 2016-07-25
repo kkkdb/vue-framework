@@ -1,14 +1,13 @@
-<!-- 商品详情 -->
 <template>
   <div class="content-wrapper">
     <!-- Content Header -->
     <section class="content-header">
        <h1>
-        商品详情
+        候选仓库快递列表
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 商品</a></li>
-        <li class="active">商品详情</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> 商品管理</a></li>
+        <li class="active">候选仓库快递列表</li>
       </ol>
     </section>
 
@@ -21,11 +20,23 @@
 </template>
 
 <script>
+import API from '../../common/API'
+import {getCookie} from '../../common/Cookie'
+
 export default {
     ready: function() {
         $(".content-wrapper").css({
             'min-height': $(document).height() - $("header").height() + 'px'
         });
+
+    },
+    data: function() {
+        return {
+            
+        }
+    },
+    methods: {
+        
     }
 }
 </script>

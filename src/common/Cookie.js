@@ -28,7 +28,8 @@ function getCookie(cookieName) {
 
 	for (let i = 0; i < cookieArr.length; i++) {
 		currentCookie = cookieArr[i];
-		if (currentCookie) {
+
+		if(currentCookie.indexOf('=')>-1){
 			cookies[currentCookie.split('=')[0].trim()] = currentCookie.split('=')[1].trim();
 		}
 	}
