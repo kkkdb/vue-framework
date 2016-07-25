@@ -21,12 +21,31 @@
 </template>
 
 <script>
+import API from '../../common/API'
+import {getCookie} from '../../common/Cookie'
+
 export default {
     ready: function() {
         $(".content-wrapper").css({
             'min-height': $(document).height() - $("header").height() + 'px'
         });
-        
+
+        this.getProductList();
+    },
+    data: function() {
+        return {
+            'productList': []
+        }
+    },
+    methods: {
+        'getProductList': function() {
+            this.$http.get(API.getProductList).then((res) => {
+                // success callback
+
+            }, (res) => {
+                // error callback
+            });
+        }
     }
 }
 </script>
