@@ -39,8 +39,6 @@ function getCookie(cookieName) {
 	else{
 		return false;
 	}
-
-	
 }
 
 /**

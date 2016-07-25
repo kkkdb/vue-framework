@@ -40,11 +40,16 @@
 
 <script>
 import API from '../common/API'
-import {setCookie} from '../common/Cookie'
+import {setCookie, getCookie} from '../common/Cookie'
 
 export default {
     ready: function() {
-
+        var that = this;
+        if(getCookie("userName")){
+            that.$route.router.go({name: 'home'});
+        }else{
+            return;
+        }
     },
     data: function() {
         return {

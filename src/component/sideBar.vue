@@ -34,10 +34,10 @@ export default {
 
         this.$http.get(API.getMenuList).then((res) => {
             // success callback
-            console.log(res);
+            
         }, (res) => {
             // error callback
-            console.log(res);
+            
         });
     }
 }
